@@ -18,8 +18,8 @@ public class IntakeSubsystem extends Subsystem {
 		return intakeSubsystem;
 	}
 
-  private Victor intakeLeft = new Victor(0);
-  private Victor intakeRight = new Victor(1);
+  private Victor intakeLeft = new Victor(5);
+  private Victor intakeRight = new Victor(6);
 
   private double lastLeft = 0;
   private double lastRight = 0;
