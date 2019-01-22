@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.IntakeSubsystem;
-import frc.robot.subsystems.WristSubsystem;
+//import frc.robot.subsystems.WristSubsystem;
 
 
 public class Robot extends TimedRobot {
@@ -25,7 +25,7 @@ public class Robot extends TimedRobot {
   private Operator operator = Operator.getOperator();
   private DriverStation ds = DriverStation.getInstance();
   private Drivetrain drivetrain = Drivetrain.getDrivetrain();
-  private WristSubsystem wristSubsystem = WristSubsystem.getwristSubsystem();
+  //private WristSubsystem wristSubsystem = WristSubsystem.getwristSubsystem();
   private IntakeSubsystem intakeSubsystem = IntakeSubsystem.getIntakeSubsystem();
 
   @Override
