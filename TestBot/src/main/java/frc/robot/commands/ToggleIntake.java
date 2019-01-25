@@ -31,7 +31,7 @@ public class ToggleIntake extends Command {
     	if (ballIntake.getLastLeft() == leftPower) { //A toggle making it so if the driver presses the same button twice, the intake turns off.
     		ballIntake.setIntake(0, 0);
     	} else {
-    		ballIntake.setIntake(leftPower, rightPower);
+    		ballIntake.setIntake(leftPower, -rightPower);
     	}
     	
     	

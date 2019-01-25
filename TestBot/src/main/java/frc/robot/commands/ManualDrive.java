@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.ConstantAccelerationCalculator;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.Operator;
@@ -39,9 +40,12 @@ public class ManualDrive extends Command {
   @Override
   protected void execute() {
     double move = moveAcceleration.getNextDataPoint(operator.controller.axisRightTrigger.getAxisValue() - operator.controller.axisLeftTrigger.getAxisValue());
-    double turn = moveAcceleration.getNextDataPoint(operator.controller.axisLeftX.getAxisValue());
+    double turn = turnAcceleration.getNextDataPoint(operator.controller.axisLeftX.getAxisValue());
 
     this.drivetrain.drive(move, turn);
+
+    SmartDashboard.putNumber("moveValue", move);
+    SmartDashboard.putNumber("turnValue", turn);
 
   }
 

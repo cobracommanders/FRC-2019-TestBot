@@ -17,14 +17,14 @@ import edu.wpi.first.wpilibj.Encoder;
 
 
 public class Drivetrain extends Subsystem {
-
+/*
   //math for the encoder 
   private static final double WheelDiameter = 0.1524; //6 inch wheeels. This was coverted to meters
   private static final double PulsePerRevolution = 2048; //all switches on the encoder are off
   private static final double WheelCircumference = WheelDiameter *Math.PI;
   private static final double MetersPerPulse = WheelCircumference / PulsePerRevolution;
 
-
+*/
   private static Drivetrain drivetrain = null;
 
   public static Drivetrain getDrivetrain() {
@@ -46,13 +46,13 @@ public class Drivetrain extends Subsystem {
 
 
   //TODO: get the digital sources for the encoders
-  public Encoder leftEncoder = new Encoder(Mappings.leftEncoderDigitalSource1, Mappings.leftEncoderDigitalSource2); 
-  public Encoder rightEncoder = new Encoder(Mappings.rightEncoderDigitalSource1, Mappings.rightEncoderDigitalSource2);
+  //public Encoder leftEncoder = new Encoder(Mappings.leftEncoderDigitalSource1, Mappings.leftEncoderDigitalSource2); 
+  //public Encoder rightEncoder = new Encoder(Mappings.rightEncoderDigitalSource1, Mappings.rightEncoderDigitalSource2);
 
   public Drivetrain() {
     super("Drivetrain");
-    leftEncoder.setDistancePerPulse(MetersPerPulse);
-    rightEncoder.setDistancePerPulse(MetersPerPulse);
+   // leftEncoder.setDistancePerPulse(MetersPerPulse);
+   // rightEncoder.setDistancePerPulse(MetersPerPulse);
 
   }
 
@@ -65,11 +65,11 @@ public class Drivetrain extends Subsystem {
     drive.arcadeDrive(move, turn);
   }
 
-  public double getDistance() {
+  /*public double getDistance() {
     //averages the encoders distance
     return(leftEncoder.getDistance() + rightEncoder.getDistance()) / 2;
   }
-
+*/
   public void tankDrive(double leftPower, double rightPower){
     frontLeftDrive.set(leftPower);
     frontRightDrive.set(rightPower);
