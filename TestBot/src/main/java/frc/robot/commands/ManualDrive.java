@@ -42,7 +42,7 @@ public class ManualDrive extends Command {
     double move = moveAcceleration.getNextDataPoint(operator.controller.axisRightTrigger.getAxisValue() - operator.controller.axisLeftTrigger.getAxisValue());
     double turn = turnAcceleration.getNextDataPoint(operator.controller.axisLeftX.getAxisValue());
 
-    this.drivetrain.drive(move, turn);
+    this.drivetrain.drive((move * .8), (turn * .8));
 
     SmartDashboard.putNumber("moveValue", move);
     SmartDashboard.putNumber("turnValue", turn);
