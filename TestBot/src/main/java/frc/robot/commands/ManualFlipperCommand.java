@@ -5,21 +5,24 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
-
+ package frc.robot.commands;
+/*
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.FlipperSubsystem;
+import frc.robot.Operator;
+
 
 public class ManualFlipperCommand extends Command {
 
   private FlipperSubsystem flipper;
+  private Operator operator;
 
-  private double power;
+  
 
-  public ManualFlipperCommand(double power) {
+  public ManualFlipperCommand() {
     super("ManualFlipperCommand");
     requires(this.flipper = FlipperSubsystem.getFlipperSubsystem());
-    this.power = power;
+    
  
   }
 
@@ -31,7 +34,7 @@ public class ManualFlipperCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    flipper.setFlipperPower(power);
+    this.flipper.setFlipperPower(operator.controller.axisRightY.getAxisValue());
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -52,4 +55,4 @@ public class ManualFlipperCommand extends Command {
   protected void interrupted() {
     end();
   }
-}
+} */

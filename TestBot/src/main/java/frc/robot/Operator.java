@@ -8,7 +8,7 @@
 package frc.robot;
 
 import frc.robot.commands.ToggleIntake;
-import frc.robot.commands.ManualFlipperCommand;;
+//import frc.robot.commands.ManualFlipperCommand;;
 
 
 public class Operator {
@@ -27,9 +27,6 @@ public class Operator {
        controller.buttonA.whenPressed(new ToggleIntake(-1,-1));
        controller.buttonY.whenPressed(new ToggleIntake(.5,.5));
        controller.buttonB.whenPressed(new ToggleIntake(-.5,-.5));
-
-       controller.rightBumper.whenPressed(new ManualFlipperCommand(.8));
-       controller.leftBumper.whenPressed(new ManualFlipperCommand(-.8));
     }
 
 

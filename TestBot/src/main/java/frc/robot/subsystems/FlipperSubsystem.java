@@ -5,16 +5,18 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystems;
+/* package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import edu.wpi.first.wpilibj.Victor;
+
+import frc.robot.commands.ManualFlipperCommand;
 
 /**
  * Add your docs here.
- */
+ 
 public class FlipperSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
@@ -25,16 +27,16 @@ public class FlipperSubsystem extends Subsystem {
 		return flipperSubsystem;
   }
   
-  private WPI_VictorSPX flipper = new WPI_VictorSPX(9);
+  private Victor flipper = new Victor(9);
 
 
   @Override
   public void initDefaultCommand() {
- 
+    //setDefaultCommand(new ManualFlipperCommand());
   }
 
   public void setFlipperPower(double power) {
     flipper.set(power);
   }
 
-}
+} */
