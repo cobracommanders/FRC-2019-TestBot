@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.FlipperSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj.command.Scheduler;
 //import frc.robot.subsystems.WristSubsystem;
@@ -28,6 +29,7 @@ public class Robot extends TimedRobot {
   private Drivetrain drivetrain = Drivetrain.getDrivetrain();
   //private WristSubsystem wristSubsystem = WristSubsystem.getwristSubsystem();
   private IntakeSubsystem intakeSubsystem = IntakeSubsystem.getIntakeSubsystem();
+  private FlipperSubsystem flipperSubsystem = FlipperSubsystem.getFlipperSubsystem();
 
   @Override
   public void robotInit() {
