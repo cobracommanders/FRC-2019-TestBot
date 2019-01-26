@@ -37,7 +37,7 @@ public class ManualWrist extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double power = wristAcceleration.getNextDataPoint(operator.controller.axisRightY.getAxisValue());
+    double power = operator.controller.axisRightY.getAxisValue();
 
     this.wrist.setWrist(power);
 

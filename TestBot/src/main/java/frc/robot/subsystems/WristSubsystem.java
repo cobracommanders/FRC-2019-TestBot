@@ -19,7 +19,7 @@ public class WristSubsystem extends Subsystem {
 		return wristSubsystem;
 	}
 
-  private Victor wrist = new Victor(0);
+  private Victor wrist = new Victor(9);
 
 
 
