@@ -20,7 +20,7 @@ public class WristSubsystem extends Subsystem {
 	}
 
   private Victor wrist = new Victor(9);
-
+  private Victor wrist2 = new Victor(8);
 
 
   @Override
@@ -31,6 +31,7 @@ public class WristSubsystem extends Subsystem {
 
   public void setWrist(double power) {
       wrist.set(power);
+      wrist2.set(-power);
 
   }
 
