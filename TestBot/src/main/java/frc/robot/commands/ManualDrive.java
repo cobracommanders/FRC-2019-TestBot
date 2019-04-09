@@ -39,8 +39,7 @@ public class ManualDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = moveAcceleration.getNextDataPoint(operator.controller.axisRightTrigger.getAxisValue() - operator.controller.axisLeftTrigger.getAxisValue());
-    double turn = turnAcceleration.getNextDataPoint(operator.controller.axisLeftX.getAxisValue());
+ 
 
     this.drivetrain.drive((move * .8), (turn * .8));
 
