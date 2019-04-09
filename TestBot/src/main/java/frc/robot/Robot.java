@@ -22,9 +22,13 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private Operator operator = Operator.getOperator();
-  private DriverStation ds = DriverStation.getInstance();
-  private Drivetrain drivetrain = Drivetrain.getDrivetrain();
+  public static DriverStation ds = DriverStation.getInstance();
+  
+  public static Drivetrain drivetrain = Drivetrain();
+
+  public static Controller controller = new Controller(Mappings.ControllerPort);
+
+  public static Operator operator = new Operator();
 
   @Override
   public void robotInit() {

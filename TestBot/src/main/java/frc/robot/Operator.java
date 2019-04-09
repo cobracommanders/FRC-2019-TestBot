@@ -12,16 +12,7 @@ import frc.robot.commands.ToggleIntake;
 
 
 public class Operator {
-
-    private static Operator operator = null;
     
-    public static Operator getOperator() {
-        operator = operator == null ? new Operator() : operator;
-        return operator;
-    }
-
-   public Controller controller = new Controller(Mappings.ControllerPort);
-
     public Operator() {
        controller.buttonX.whenPressed(new ToggleIntake(1, 1));
        controller.buttonA.whenPressed(new ToggleIntake(-1,-1));

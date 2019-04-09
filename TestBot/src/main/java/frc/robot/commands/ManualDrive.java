@@ -20,14 +20,12 @@ public class ManualDrive extends Command {
   private ConstantAccelerationCalculator moveAcceleration = new ConstantAccelerationCalculator(0.00005);
   private ConstantAccelerationCalculator turnAcceleration = new ConstantAccelerationCalculator(0.00005);
 
-
   public ManualDrive() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     super("RampDrive");
 
     requires(this.drivetrain = Drivetrain.getDrivetrain());
-
 
   }
 
@@ -39,14 +37,21 @@ public class ManualDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = moveAcceleration.getNextDataPoint(operator.controller.axisLeftY.getAxisValue());
-    double turn = turnAcceleration.getNextDataPoint(operator.controller.axisRightX.getAxisValue());
+    double move = Robot.driverController.axisLeftY.getAxisValue();
+    double turn = Robot.driverController.axisRightX.getAxisValue();
 
-    this.drivetrain.drive((-move * .8), (turn * .6));
+    // slowmode
+    if (Robot.driverController.axisLeftTrigger.getAxisValue() > .1) {
+      move *= 0.8;
+      turn *= 0.7;
+    }
 
-    SmartDashboard.putNumber("moveValue", move);
-    SmartDashboard.putNumber("turnValue", turn);
+    // when right joypress is true turn will be at 100%
+    if (!Robot.driverController.rightJoyPress.get()) {
+      turn *= .85;
+    }
 
+    Robot.drivetrain.drive(move, turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -58,7 +63,7 @@ public class ManualDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    drivetrain.drive(0,0);
+    drivetrain.drive(0, 0);
   }
 
   // Called when another command which requires one or more of the same
