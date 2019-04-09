@@ -7,17 +7,12 @@
 
 package frc.robot;
 
-import frc.robot.commands.ToggleIntake;
 //import frc.robot.commands.ManualFlipperCommand;;
 
 
 public class Operator {
     
     public Operator() {
-       controller.buttonX.whenPressed(new ToggleIntake(1, 1));
-       controller.buttonA.whenPressed(new ToggleIntake(-1,-1));
-       controller.buttonY.whenPressed(new ToggleIntake(.5,.5));
-       controller.buttonB.whenPressed(new ToggleIntake(-.5,-.5));
     }
 
 

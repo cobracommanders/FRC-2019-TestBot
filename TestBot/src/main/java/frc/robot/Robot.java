@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import frc.robot.subsystems.WristSubsystem;
 
 
 public class Robot extends TimedRobot {
@@ -24,7 +23,7 @@ public class Robot extends TimedRobot {
 
   public static DriverStation ds = DriverStation.getInstance();
   
-  public static Drivetrain drivetrain = Drivetrain();
+  public static Drivetrain drivetrain = new Drivetrain();
 
   public static Controller controller = new Controller(Mappings.ControllerPort);
 
